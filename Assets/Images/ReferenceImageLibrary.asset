@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 848409ee8ba454f42a5ddff137688a27, type: 3}
+  m_Name: ReferenceImageLibrary
+  m_EditorClassIdentifier: 
+  m_GuidLow: 4827831399191336161
+  m_GuidHigh: 7075512769808973243
+  m_DataStore:
+    m_Storage: []
+  m_Images:
+  - m_SerializedGuid:
+      m_GuidLow: 5110758502884082451
+      m_GuidHigh: 2309903714921971389
+    m_SerializedTextureGuid:
+      m_GuidLow: 9166179889736545807
+      m_GuidHigh: 327538106111353563
+    m_Size: {x: 0, y: 0}
+    m_SpecifySize: 0
+    m_Name: pic6974116
+    m_Texture: {fileID: 2800000, guid: 9313760fd00b7f34dbe22b112ca68b04, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5401221252417928730
+      m_GuidHigh: 11371719065449831334
+    m_SerializedTextureGuid:
+      m_GuidLow: 9166179889736545807
+      m_GuidHigh: 327538106111353563
+    m_Size: {x: 0, y: 0}
+    m_SpecifySize: 0
+    m_Name: OnePiece
+    m_Texture: {fileID: 2800000, guid: 9313760fd00b7f34dbe22b112ca68b04, type: 3}
