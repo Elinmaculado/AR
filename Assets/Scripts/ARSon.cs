@@ -5,10 +5,16 @@ public class ARSon : ARObject
 {
     [SerializeField] TextMeshProUGUI display;
     [SerializeField] Transform mainCamera;
+    [SerializeField] Renderer renderer;
+
+    [SerializeField] Animator animator;
 
     void Awake()
     {
         mainCamera = Camera.main.transform;
+        renderer = GetComponent<Renderer>();
+        animator = GetComponentInChildren<Animator>();
+        //animator.SetBool("IsDancing", true);
     }
     
     protected override void Activate()
@@ -24,9 +30,13 @@ public class ARSon : ARObject
         {
             case State.On:
                 display.text = "Peleando";
+                renderer.material.color = Color.red;
+                animator.SetBool("IsDancing", true);
                 break;
             case State.Off:
+                renderer.material.color = Color.blue;
                 display.text = "No pelien";
+                animator.SetBool("IsDancing", false);
                 break;
         }
     }
