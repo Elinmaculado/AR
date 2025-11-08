@@ -8,6 +8,8 @@ public abstract class ARObject : MonoBehaviour
 
     public bool isColliding;
 
+    
+    
     public enum State
     {
         On,
@@ -25,13 +27,15 @@ public abstract class ARObject : MonoBehaviour
         Debug.Log("CollisionEnter");
         if (other.TryGetComponent<ARObject>(out ARObject aRObject))
         {
-            SetState(State.On);
+            if (this is ARSon son)
+                son.setOtherTag(aRObject.gameObject.tag);
+        SetState(State.On);
         }
     }
 
     void OnTriggerStay(Collider other)
     {
-        Debug.Log("CollisionStay");
+        // Debug.Log("CollisionStay");
         isColliding = true;
 
         if(state != State.On)

@@ -6,11 +6,13 @@ public class ARSon : ARObject
     [SerializeField] TextMeshProUGUI display;
     [SerializeField] Transform mainCamera;
     [SerializeField] Renderer renderer;
-
     [SerializeField] Animator animator;
+
+    public string otherTag;
 
     void Awake()
     {
+        display.text = tag;
         mainCamera = Camera.main.transform;
         renderer = GetComponent<Renderer>();
         animator = GetComponentInChildren<Animator>();
@@ -29,13 +31,13 @@ public class ARSon : ARObject
         switch (state)
         {
             case State.On:
-                display.text = "Peleando";
                 renderer.material.color = Color.red;
                 animator.SetBool("IsDancing", true);
+                CheckTag();
                 break;
             case State.Off:
-                renderer.material.color = Color.blue;
-                display.text = "No pelien";
+                display.text = tag;
+                renderer.material.color = Color.blue; 
                 animator.SetBool("IsDancing", false);
                 break;
         }
@@ -54,5 +56,35 @@ public class ARSon : ARObject
         }
 
         //isColliding = false;
+    }
+    
+    public void setOtherTag(string tag)
+    {
+        otherTag = tag;
+        Debug.Log(otherTag);
+    }
+
+    void CheckTag()
+    {
+        string result = "";
+
+        if (tag == otherTag)
+        {
+            result = "Empate";
+        }
+        else if (
+            (tag == "Piedra" && otherTag == "Tijera") ||
+            (tag == "Papel" && otherTag == "Piedra") ||
+            (tag == "Tijera" && otherTag == "Papel"))
+        {
+            result = "Ganaste";
+        }
+        else
+        {
+            result = "Perdiste";
+        }
+
+        display.text = result;
+
     }
 }

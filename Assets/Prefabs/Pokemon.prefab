@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 5684975978161209745}
   m_Layer: 0
   m_Name: Pokemon
-  m_TagString: Untagged
+  m_TagString: Papel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -232,6 +232,8 @@ MonoBehaviour:
   display: {fileID: 4703508380555383115}
   mainCamera: {fileID: 0}
   renderer: {fileID: 0}
+  animator: {fileID: 0}
+  otherTag: 
 --- !u!54 &5684975978161209745
 Rigidbody:
   m_ObjectHideFlags: 0

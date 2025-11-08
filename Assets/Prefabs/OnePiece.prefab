@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 8826860501177090888}
   m_Layer: 0
   m_Name: OnePiece
-  m_TagString: Untagged
+  m_TagString: Piedra
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -396,6 +396,7 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   renderer: {fileID: 0}
   animator: {fileID: 0}
+  otherTag: 
 --- !u!1001 &7938274533570561001
 PrefabInstance:
   m_ObjectHideFlags: 0
