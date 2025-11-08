@@ -396,7 +396,23 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   renderer: {fileID: 0}
   animator: {fileID: 0}
-  otherTag: 
+  change:
+    m_Name: Change
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: fdc7c58c-8e76-4252-b282-a7c818ce1e80
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: f247df98-8d0d-4d0f-b18d-2568d4b2a69a
+      m_Path: <Keyboard>/e
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Change
+      m_Flags: 0
+    m_Flags: 0
 --- !u!1001 &7938274533570561001
 PrefabInstance:
   m_ObjectHideFlags: 0

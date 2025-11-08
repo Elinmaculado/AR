@@ -1,5 +1,7 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using System.Collections.Generic;
 
 public class ARSon : ARObject
 {
@@ -8,10 +10,16 @@ public class ARSon : ARObject
     [SerializeField] Renderer renderer;
     [SerializeField] Animator animator;
 
-    public string otherTag;
+    [SerializeField] InputAction change;
+    string otherTag;
+
+    private List<string> tagOptions = new List<string> { "Piedra", "Papel", "Tijera" };
+    private int currentTagIndex = 0;
+
 
     void Awake()
     {
+        change.Enable();
         display.text = tag;
         mainCamera = Camera.main.transform;
         renderer = GetComponent<Renderer>();
@@ -31,7 +39,7 @@ public class ARSon : ARObject
         switch (state)
         {
             case State.On:
-                renderer.material.color = Color.red;
+                //renderer.material.color = Color.red;
                 animator.SetBool("IsDancing", true);
                 CheckTag();
                 break;
@@ -45,6 +53,10 @@ public class ARSon : ARObject
 
     void Update()
     {
+        if (change.WasPressedThisFrame())
+        {
+            ChangeTag();
+        }
         Vector3 lookDirection = display.transform.position - mainCamera.position;
         display.transform.rotation = Quaternion.LookRotation(lookDirection);
         if (!isColliding)
@@ -70,6 +82,7 @@ public class ARSon : ARObject
 
         if (tag == otherTag)
         {
+            renderer.material.color = Color.gray;
             result = "Empate";
         }
         else if (
@@ -77,14 +90,27 @@ public class ARSon : ARObject
             (tag == "Papel" && otherTag == "Piedra") ||
             (tag == "Tijera" && otherTag == "Papel"))
         {
+            renderer.material.color = Color.green;
             result = "Ganaste";
         }
         else
         {
+            renderer.material.color = Color.red;
             result = "Perdiste";
         }
 
         display.text = result;
 
     }
+    
+    public void ChangeTag()
+    {
+        currentTagIndex = (currentTagIndex + 1) % tagOptions.Count;
+        
+        tag = tagOptions[currentTagIndex];
+        gameObject.tag = tag;
+        
+        display.text = tag;
+    }
+
 }

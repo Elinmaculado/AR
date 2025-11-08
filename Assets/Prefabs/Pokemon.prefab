@@ -233,6 +233,23 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   renderer: {fileID: 0}
   animator: {fileID: 0}
+  change:
+    m_Name: Change
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: b77daa0a-5702-4e5b-9570-3596fca76b3f
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 813d2732-9045-4ec0-ba0a-966bf0be36cf
+      m_Path: <Keyboard>/q
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Change
+      m_Flags: 0
+    m_Flags: 0
   otherTag: 
 --- !u!54 &5684975978161209745
 Rigidbody:
